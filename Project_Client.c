@@ -24,6 +24,9 @@ int main(int argc, char *argv[]){
   if ((server = socket(AF_INET, SOCK_STREAM, 0)) < 0){
      fprintf(stderr, "Cannot create socket\n");
      exit(1);
+  }
+
+  server_Add.sin_family = AF_INET;
   sscanf(argv[2], "%d", &port_Number);
   server_Add.sin_port = htons((uint16_t)port_Number);
 
